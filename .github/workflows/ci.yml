@@ -1,0 +1,39 @@
+name: CI Visualización de Datos
+
+# Se dispara cuando haces 'push' o 'pull request' a la rama main
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Descargar código
+      uses: actions/checkout@v4
+
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas plotnine dagster openpyxl
+
+    - name: Verificar sintaxis del Pipeline
+      run: |
+        # Esto asegura que no haya errores de nombres no definidos (como el error 'cod')
+        python -m py_compile src/pipeline.py
+        python -m py_compile src/lab-renta.py
+
+    - name: Test de archivos de datos
+      run: |
+        # Verificamos que los CSV y Excel necesarios existan en el repo
+        test -f data/distribucion-renta-canarias.csv || (echo "Falta el CSV de Renta" && exit 1)
+        test -f data/codislas.csv || (echo "Falta el CSV de Islas" && exit 1)
+        test -f data/nivelestudios.xlsx || (echo "Falta el Excel de Estudios" && exit 1)
