@@ -1,0 +1,7 @@
+[32m2026-02-26 17:56:43 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - feacf328-4fc1-487a-bded-8f5521801ec5 - 88331 - LOGS_CAPTURED - Started capturing logs in process (pid: 88331).
+[32m2026-02-26 17:56:43 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - feacf328-4fc1-487a-bded-8f5521801ec5 - 88331 - rentas_canarias - STEP_START - Started execution of step "rentas_canarias".
+[32m2026-02-26 17:56:43 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - feacf328-4fc1-487a-bded-8f5521801ec5 - 88331 - rentas_canarias - STEP_OUTPUT - Yielded output "result" of type "DataFrame". (Type check passed).
+[32m2026-02-26 17:56:43 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - feacf328-4fc1-487a-bded-8f5521801ec5 - rentas_canarias - Writing file at: /home/daniel/master/visualizacion de datos/p2_visualizacion_de_datos/.tmp_dagster_home_8ydirhla/storage/rentas_canarias using PickledObjectFilesystemIOManager...
+[32m2026-02-26 17:56:43 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - feacf328-4fc1-487a-bded-8f5521801ec5 - 88331 - rentas_canarias - ASSET_MATERIALIZATION - Materialized value rentas_canarias.
+[32m2026-02-26 17:56:43 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - feacf328-4fc1-487a-bded-8f5521801ec5 - 88331 - rentas_canarias - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2026-02-26 17:56:43 +0000[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - feacf328-4fc1-487a-bded-8f5521801ec5 - 88331 - rentas_canarias - STEP_SUCCESS - Finished execution of step "rentas_canarias" in 93ms.
